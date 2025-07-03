@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YGRIK.STUDIO — твоя вторая нейронка 👽</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0A0A0A;
+            color: #FFFFFF;
+        }
+        
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ADFF00, #00FFA3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px #ADFF0050); }
+            to { filter: drop-shadow(0 0 30px #00FFA350); }
+        }
+        
+        .neon-button {
+            background: linear-gradient(45deg, #ADFF00, #00FFA3);
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(173, 255, 0, 0.3);
+        }
+        
+        .neon-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(173, 255, 0, 0.5);
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(173, 255, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(173, 255, 0, 0.1);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .accent-text {
+            color: #ADFF00;
+        }
+        
+        .mint-text {
+            color: #00FFA3;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+        }
+        
+        .testimonial {
+            background: rgba(173, 255, 0, 0.05);
+            border-left: 3px solid #ADFF00;
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+        }
+        
+        input, textarea {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #ADFF00;
+            box-shadow: 0 0 0 2px rgba(173, 255, 0, 0.2);
+        }
+        
+        input::placeholder, textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .parallax {
+            transform: translateZ(0);
+            transition: transform 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-[#0A0A0A] text-white overflow-x-hidden">
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] via-[#0A0A0A] to-[#1A1A1A] opacity-90"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-6xl mx-auto">
+                <div class="fade-in">
+                    <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+                        YGRIK.STUDIO
+                        <br>
+                        <span class="text-3xl md:text-5xl lg:text-6xl">твоя вторая нейронка 👽</span>
+                    </h1>
+                </div>
+                
+                <div class="fade-in" style="animation-delay: 0.2s;">
+                    <p class="text-xl md:text-2xl lg:text-3xl mb-8 text-gray-300 font-medium">
+                        Меньше пыхтишь — больше творишь
+                    </p>
+                </div>
+                
+                <div class="fade-in" style="animation-delay: 0.4s;">
+                    <a href="https://t.me/ygrikai" target="_blank" class="neon-button inline-block px-8 py-4 text-black font-bold text-lg rounded-lg hover:scale-105 transition-transform">
+                        Подписаться в Telegram
+                    </a>
+                </div>
+                
+                <div class="fade-in mt-16" style="animation-delay: 0.6s;">
+                    <img src="keys/irik-hero?prompt=Modern%20minimalist%20alien%20character%20named%20Irik%20with%20dark%20teal%20skin%20%28%23006C6C%29%2C%20large%20black%20eyes%20with%20green%20glow%2C%20small%20nose%2C%20wearing%20oversized%20hoodie%20with%20YGRIK.STUDIO%20text%20and%20techwear%20pants%2C%203D%20render%20style%2C%20waving%20hello%2C%20friendly%20pose%2C%20dark%20background%2C%20neon%20green%20accents" alt="Ирик приветствует" class="mx-auto w-64 h-64 object-cover rounded-full border-4 border-[#ADFF00] shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 gradient-bg">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 accent-text">О нас</h2>
+                    <p class="text-xl md:text-2xl leading-relaxed text-gray-300">
+                        Мы — комьюнити креативщиков и ИИ-энтузиастов. 
+                        <span class="mint-text">Чиним дедлайны</span>, 
+                        <span class="accent-text">вдохновляем</span>, 
+                        <span class="mint-text">автоматизируем</span>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 mint-text">Что внутри</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card p-8 rounded-2xl fade-in">
+                        <div class="mb-6">
+                            <img src="keys/irik-prompts?prompt=Minimalist%20alien%20character%20Irik%20with%20dark%20teal%20skin%20working%20on%20computer%20with%20AI%20prompts%20on%20screen%2C%20modern%203D%20style%2C%20focused%20expression%2C%20neon%20green%20glow%2C%20dark%20background" alt="Промпты для ИИ" class="w-20 h-20 mx-auto rounded-lg">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 accent-text">Промпты для ИИ</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Готовые промпты для всех популярных ИИ-инструментов. 
+                            Экономь время, получай лучший результат.
+                        </p>
+                    </div>
+                    
+                    <div class="card p-8 rounded-2xl fade-in" style="animation-delay: 0.2s;">
+                        <div class="mb-6">
+                            <img src="keys/irik-video?prompt=Alien%20character%20Irik%20with%20dark%20teal%20skin%20directing%20video%20production%2C%20wearing%20hoodie%20with%20YGRIK.STUDIO%20text%2C%20professional%20camera%20equipment%2C%20modern%20minimalist%20style%2C%20neon%20green%20lighting" alt="Видео/продакшн" class="w-20 h-20 mx-auto rounded-lg">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 mint-text">Видео/продакшн</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Гайды по созданию контента, съёмке и монтажу. 
+                            От идеи до публикации.
+                        </p>
+                    </div>
+                    
+                    <div class="card p-8 rounded-2xl fade-in" style="animation-delay: 0.4s;">
+                        <div class="mb-6">
+                            <img src="keys/irik-automation?prompt=Futuristic%20alien%20character%20Irik%20with%20dark%20teal%20skin%20surrounded%20by%20automation%20workflows%2C%20holographic%20interfaces%2C%20wearing%20techwear%20outfit%2C%20neon%20green%20data%20streams%2C%20cyberpunk%20aesthetic" alt="Автоматизация" class="w-20 h-20 mx-auto rounded-lg">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 accent-text">Автоматизация и гайды</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Автоматизируй рутину, настрой воркфлоу, 
+                            сосредоточься на творчестве.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 gradient-bg">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 accent-text">Отзывы / вайбы</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="testimonial p-6 rounded-lg fade-in">
+                        <p class="text-lg mb-4 italic">
+                            "Наконец-то нашёл комьюнити, где можно чилить с ИИ и не стыдиться своих промптов 👽"
+                        </p>
+                        <p class="text-sm text-gray-400">— Алексей, дизайнер</p>
+                    </div>
+                    
+                    <div class="testimonial p-6 rounded-lg fade-in" style="animation-delay: 0.2s;">
+                        <p class="text-lg mb-4 italic">
+                            "Ирик помог мне автоматизировать половину моих задач. Теперь у меня есть время на кофе ☕"
+                        </p>
+                        <p class="text-sm text-gray-400">— Мария, контент-менеджер</p>
+                    </div>
+                    
+                    <div class="testimonial p-6 rounded-lg fade-in" style="animation-delay: 0.4s;">
+                        <p class="text-lg mb-4 italic">
+                            "Лучшие промпты для Midjourney! Мои клиенты в восторге от результатов 🎨"
+                        </p>
+                        <p class="text-sm text-gray-400">— Игорь, иллюстратор</p>
+                    </div>
+                    
+                    <div class="testimonial p-6 rounded-lg fade-in" style="animation-delay: 0.6s;">
+                        <p class="text-lg mb-4 italic">
+                            "Наконец-то видеомонтаж стал не мучением, а удовольствием. Спасибо за гайды! 🎬"
+                        </p>
+                        <p class="text-sm text-gray-400">— Дмитрий, видеограф</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 mint-text">Отдел починки вайба 👽</h2>
+                    <p class="text-xl text-gray-300">
+                        Есть вопросы? Нужна помощь? Или просто хочешь поделиться своим успехом?
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="fade-in">
+                        <div class="contact-form p-8 rounded-2xl">
+                            <form class="space-y-6">
+                                <div>
+                                    <input type="text" placeholder="Твоё имя" class="w-full px-4 py-3 rounded-lg">
+                                </div>
+                                <div>
+                                    <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-lg">
+                                </div>
+                                <div>
+                                    <textarea placeholder="Расскажи, что у тебя на уме" rows="4" class="w-full px-4 py-3 rounded-lg resize-none"></textarea>
+                                </div>
+                                <button type="submit" class="w-full neon-button py-3 text-black font-bold rounded-lg">
+                                    Отправить сообщение
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-in" style="animation-delay: 0.2s;">
+                        <div class="space-y-8">
+                            <div class="text-center">
+                                <img src="keys/irik-contact?prompt=Friendly%20alien%20character%20Irik%20with%20dark%20teal%20skin%20wearing%20YGRIK.STUDIO%20hoodie%2C%20sitting%20at%20modern%20desk%20with%20laptop%2C%20ready%20to%20help%2C%20minimalist%203D%20style%2C%20neon%20green%20glow%2C%20professional%20but%20friendly%20atmosphere" alt="Ирик готов помочь" class="w-48 h-48 mx-auto rounded-full border-4 border-[#00FFA3] shadow-2xl">
+                            </div>
+                            
+                            <div class="text-center">
+                                <p class="text-lg mb-6 text-gray-300">
+                                    Или напиши нам напрямую в Telegram
+                                </p>
+                                <a href="https://t.me/ygrikai" target="_blank" class="neon-button inline-block px-8 py-4 text-black font-bold text-lg rounded-lg hover:scale-105 transition-transform">
+                                    Написать в Telegram
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold mb-4 gradient-text">YGRIK.STUDIO</h3>
+                <p class="text-gray-400">Меньше пыхтишь — больше творишь 👽</p>
+            </div>
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="https://t.me/ygrikai" target="_blank" class="text-gray-400 hover:text-[#ADFF00] transition-colors">
+                    Telegram
+                </a>
+                <a href="#about" class="text-gray-400 hover:text-[#00FFA3] transition-colors">
+                    О нас
+                </a>
+                <a href="#services" class="text-gray-400 hover:text-[#ADFF00] transition-colors">
+                    Услуги
+                </a>
+                <a href="#contact" class="text-gray-400 hover:text-[#00FFA3] transition-colors">
+                    Контакты
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm">
+                © 2025 YGRIK.STUDIO. Все права защищены инопланетным правом.
+            </p>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Smooth scrolling animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax');
+            
+            parallaxElements.forEach(element => {
+                const speed = element.dataset.speed || 0.5;
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // Contact form submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Спасибо за сообщение! Ирик скоро с тобой свяжется 👽');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initial animation trigger
+        setTimeout(() => {
+            document.querySelectorAll('.fade-in').forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, index * 200);
+            });
+        }, 500);
+    </script>
+</body>
+</html>
